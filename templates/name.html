@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .name {
+            background-color: #3498db;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            animation: floatIn 1.5s ease-in-out infinite alternate, colorChange 5s ease-in-out infinite;
+            text-align: center;
+            color: #ffffff;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 8px 0;
+        }
+        @keyframes floatIn {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        @keyframes colorChange {
+            0% {
+                background-color: #3498db;
+            }
+            50% {
+                background-color: #e74c3c;
+            }
+            100% {
+                background-color: #9b59b6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="name">
+        <h1>{{ name }}</h1>
+        <p>Age: {{ age }}</p>
+        <p>Gender: {{ gender }}</p>
+    </div>
+</body>
+</html>
